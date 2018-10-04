@@ -1,0 +1,51 @@
+{
+  "name": "metod-admin",
+  "version": "1.0.0",
+  "description": "METOD admin client",
+  "author": "Terion <mail@terion.name>",
+  "private": true,
+  "main": "main.js",
+  "build": {
+    "appId": "com.metod-admin.app",
+    "directories": {
+      "buildResources": "static"
+    }
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=DEV electron .",
+    "dev:web": "cross-env NODE_ENV=DEV BUILD_TARGET=web  nuxt",
+    "build": "nuxt build && electron-builder",
+    "build:web": "cross-env nuxt build",
+    "start": "cross-env nuxt build && nuxt start"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-flow": "^7.0.0",
+    "element-ui": "^2.4.7",
+    "lockr": "^0.8.5",
+    "nuxt": "^2.1.0",
+    "nuxt-babel": "^0.1.2",
+    "nuxt-i18n": "^5.3.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "underscore": "^1.9.1",
+    "vue-lodash": "^2.0.0",
+    "vue-wysiwyg": "^1.7.2",
+    "vue2-editor": "^2.6.6",
+    "vuedraggable": "^2.16.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "cross-env": "^5.1.4",
+    "electron": "2.0.0-beta.7",
+    "electron-builder": "^20.8.1",
+    "electron-devtools-installer": "^2.2.3",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0"
+  }
+}
