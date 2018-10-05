@@ -29,7 +29,8 @@ module.exports = {
 			'~plugins/i18n',
 			'~plugins/lodash',
 			{src: '~plugins/vueEditor', ssr: false},
-			{src: '~plugins/draggable', ssr: false}
+			{src: '~plugins/draggable', ssr: false},
+			{src: '~plugins/apexcharts', ssr: false}
 	],
 	modules: [
 		['nuxt-i18n', {

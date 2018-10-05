@@ -1,9 +1,22 @@
 <template>
     <el-card class="content-builder">
-        <el-card style="margin-bottom: 1em">
-            <div slot="header">{{$t('template')}}</div>
-            <el-button class="button" @click="createFromTemplate('simple')">{{ $t(`template-simple`) }}</el-button>
-        </el-card>
+        <el-row :gutter="20">
+            <el-col :span="12">
+                <el-card style="margin-bottom: 1em">
+                    <div slot="header">{{$t('template')}}</div>
+                    <el-button class="button" @click="createFromTemplate('simple')">{{ $t(`template-simple`) }}</el-button>
+                </el-card>
+            </el-col>
+            <el-col :span="12">
+                <el-card style="margin-bottom: 1em">
+                    <div slot="header">{{$t('basic-article-fields')}}</div>
+                    <label>{{$t('title')}}</label>
+                    <el-input v-model="properties.title"></el-input>
+                    <label>{{$t('announce')}}</label>
+                    <el-input type="textarea" rows="3" v-model="properties.announce"></el-input>
+                </el-card>
+            </el-col>
+        </el-row>
 
         <draggable class="content-builder" :list='items' :options="{handle:'.handle'}" @start="drag=true"
                    @end="drag=false">
@@ -19,15 +32,16 @@
                            @change="onBlockChange(item.id, $event)"></component>
             </el-card>
         </draggable>
+
         <div class="add" style="margin-top: 1em">
             <el-button class="button" icon="el-icon-circle-plus-outline" @click="add('lead')">{{ $t(`lead-block`) }}
             </el-button>
             <el-button class="button" icon="el-icon-circle-plus-outline" @click="add('forecast')">{{
                 $t(`forecast-block`) }}
             </el-button>
-            <!--<el-button class="button" icon="el-icon-circle-plus-outline" @click="add('statistics')">{{
+            <el-button class="button" icon="el-icon-circle-plus-outline" @click="add('statistics')">{{
                 $t(`statistics-block`) }}
-            </el-button>-->
+            </el-button>
             <el-button class="button" icon="el-icon-circle-plus-outline" @click="add('text')">{{ $t(`text-block`) }}
             </el-button>
             <el-button class="button" icon="el-icon-circle-plus-outline" @click="add('richtext')">{{
@@ -38,7 +52,16 @@
             <el-button class="button" icon="el-icon-circle-plus-outline" @click="add('links')">{{ $t(`links-block`) }}
             </el-button>
         </div>
+
+        <el-card style="margin-top: 1em">
+            <el-button class="button" type="primary">{{ $t(`save`) }}</el-button>
+        </el-card>
+
     </el-card>
+
+
+
+
 </template>
 
 <script>
@@ -54,6 +77,7 @@
   export default {
     data() {
       return {
+        properties: {},
         items: []
       }
     },
