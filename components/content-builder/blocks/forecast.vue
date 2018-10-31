@@ -2,7 +2,7 @@
     <div class="block-body">
         <el-card class="box-card editor">
             <div slot="header" class="clearfix">
-                <span>{{ $t('editor') }}</span>
+                <el-input v-model="state.heading" :placeholder="$t('block_heading')"></el-input>
             </div>
             <el-table :data="state.items" type="expand" style="width: 100%">
                 <el-table-column type="expand">

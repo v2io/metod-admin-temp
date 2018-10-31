@@ -148,4 +148,15 @@
                 background #f6f6f6
                 .el-card__header
                     background #fff
+        .title
+            background url("~assets/img/dot-row.png") left repeat-x
+            margin 0 -1em 1em
+            h2
+                margin-left 12em
+                display inline-block
+                font-weight normal
+                font-size 0.8em
+                background #cd3037 //$red
+                color #fff
+                padding 0.25em 0.5em
 </style>

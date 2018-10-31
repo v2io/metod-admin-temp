@@ -2,7 +2,7 @@
     <div class="block-body">
         <el-card class="box-card editor">
             <div slot="header" class="clearfix">
-                <span>{{ $t('editor') }}</span>
+                <el-input v-model="state.heading" :placeholder="$t('block_heading')"></el-input>
             </div>
             <el-table :data="state.links" style="width: 100%">
                 <el-table-column :label="$t('link')">
@@ -28,16 +28,13 @@
             <div slot="header" class="clearfix">
                 <span>{{ $t('preview') }}</span>
             </div>
-            <ul>
-                <li v-for="link in state.links" :key="link.url">
-                    <a :href="link.url" target="_blank">{{link.text}}</a>
-                </li>
-            </ul>
+            <preview :content="state"></preview>
         </el-card>
     </div>
 </template>
 
 <script>
+  import preview from "~/shared-components/article/blocks/links"
   export default {
     props: ['content'],
     data() {
@@ -58,6 +55,9 @@
         },
         deep: true
       }
+    },
+    components: {
+      preview
     }
   }
 </script>

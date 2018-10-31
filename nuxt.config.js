@@ -21,6 +21,7 @@ module.exports = {
 	},
 	dev: process.env.NODE_ENV === 'DEV',
 	css: [
+    '@fortawesome/fontawesome-svg-core/styles.css',
 		'@/assets/css/global.css',
 		'element-ui/lib/theme-chalk/index.css'
 	],
@@ -29,6 +30,8 @@ module.exports = {
 			'~plugins/i18n',
 			'~plugins/lodash',
 			'~plugins/api',
+			'~plugins/vue-awesome',
+			'~plugins/components',
 			{src: '~plugins/vueEditor', ssr: false},
 			{src: '~plugins/draggable', ssr: false},
 			{src: '~plugins/apexcharts', ssr: false}

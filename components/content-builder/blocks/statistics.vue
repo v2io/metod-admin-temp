@@ -2,7 +2,7 @@
     <div class="block-body">
         <el-card class="box-card editor">
             <div slot="header" class="clearfix">
-                <span>{{ $t('editor') }}</span>
+                <el-input v-model="state.heading" :placeholder="$t('block_heading')"></el-input>
             </div>
 
             <strong>Все сообщения в структуре инфополя</strong>
@@ -59,7 +59,7 @@
             <div slot="header" class="clearfix">
                 <span>{{ $t('preview') }}</span>
             </div>
-            <h3>Тут будет превью в дизайне, когда будет сверстан фронт</h3>
+            <preview :content="state"></preview>
         </el-card>
     </div>
 </template>
@@ -71,6 +71,7 @@
 </style>
 
 <script>
+  import preview from "~/shared-components/article/blocks/statistics"
   export default {
     props: ['content'],
     data() {
@@ -113,6 +114,9 @@
         },
         deep: true
       }
+    },
+    components: {
+      preview
     }
   }
 </script>

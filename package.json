@@ -25,6 +25,10 @@
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-flow": "^7.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.7",
+    "@fortawesome/free-regular-svg-icons": "^5.4.2",
+    "@fortawesome/free-solid-svg-icons": "^5.4.2",
+    "@fortawesome/vue-fontawesome": "^0.1.2",
     "apexcharts": "^2.0.9",
     "axios": "^0.18.0",
     "element-ui": "^2.4.7",
@@ -40,6 +44,7 @@
     "underscore": "^1.9.1",
     "vue-apexcharts": "^1.2.1",
     "vue-lodash": "^2.0.0",
+    "vue-nl2br": "^0.0.5",
     "vue-wysiwyg": "^1.7.2",
     "vue2-editor": "^2.6.6",
     "vuedraggable": "^2.16.0"

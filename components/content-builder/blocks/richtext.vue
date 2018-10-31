@@ -2,7 +2,7 @@
     <div class="block-body">
         <el-card class="box-card editor">
             <div slot="header" class="clearfix">
-                <span>{{ $t('editor') }}</span>
+                <el-input v-model="state.heading" :placeholder="$t('block_heading')"></el-input>
             </div>
             <text-editor v-model="state.value"></text-editor>
         </el-card>
@@ -10,12 +10,13 @@
             <div slot="header" class="clearfix">
                 <span>{{ $t('preview') }}</span>
             </div>
-            <div v-html="state.value"></div>
+            <preview :content="state"></preview>
         </el-card>
     </div>
 </template>
 
 <script>
+  import preview from "~/shared-components/article/blocks/richtext"
   export default {
     props: ['content'],
     data() {
@@ -28,6 +29,9 @@
         },
         deep: true
       }
+    },
+    components: {
+      preview
     }
   }
 </script>
