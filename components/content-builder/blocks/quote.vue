@@ -23,9 +23,9 @@
 
 <script>
   export default {
-    props: ['block'],
+    props: ['content'],
     data() {
-      return {state: this.block}
+      return {state: this.content}
     },
     watch: {
       state: {

@@ -72,10 +72,10 @@
 
 <script>
   export default {
-    props: ['block'],
+    props: ['content'],
     data() {
       return {
-        state: this.block && Object.values(this.block).length ? this.block : {
+        state: this.content && Object.values(this.content).length ? this.content : {
           infofield: {
             media: 0,
             internet: 0,

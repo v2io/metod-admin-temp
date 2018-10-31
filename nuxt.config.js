@@ -28,6 +28,7 @@ module.exports = {
 			'~plugins/element',
 			'~plugins/i18n',
 			'~plugins/lodash',
+			'~plugins/api',
 			{src: '~plugins/vueEditor', ssr: false},
 			{src: '~plugins/draggable', ssr: false},
 			{src: '~plugins/apexcharts', ssr: false}

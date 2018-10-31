@@ -5,7 +5,7 @@
             <br>
             <hr>
             <br>
-            <ContentBuilder></ContentBuilder>
+            <ContentBuilder @save="save"></ContentBuilder>
         </el-col>
     </el-row>
 </template>
@@ -15,6 +15,16 @@
     export default  {
       components: {
         ContentBuilder
+      },
+      methods: {
+        async save(data) {
+          try {
+            const result = await this.$api.post('/articles', data);
+            // todo show success message
+          } catch (e) {
+            // todo show error
+          }
+        }
       }
     }
 </script>

@@ -28,7 +28,7 @@
                     </span>
                     <span>{{ $t(`${item.type}-block`) }}</span>
                 </div>
-                <component :is="_.upperFirst(_.camelCase(item.type))+'Block'" :block="item.data"
+                <component :is="_.upperFirst(_.camelCase(item.type))+'Block'" :content="item.data"
                            @change="onBlockChange(item.id, $event)"></component>
             </el-card>
         </draggable>
@@ -54,7 +54,7 @@
         </div>
 
         <el-card style="margin-top: 1em">
-            <el-button class="button" type="primary">{{ $t(`save`) }}</el-button>
+            <el-button class="button" @click="$emit('save', {properties: this.properties, items: this.items})" type="primary">{{ $t(`save`) }}</el-button>
         </el-card>
 
     </el-card>
@@ -66,6 +66,7 @@
 
 <script>
   import lockr from "lockr"
+
   import RichtextBlock from "./blocks/richtext"
   import TextBlock from "./blocks/text"
   import QuoteBlock from "./blocks/quote"
@@ -143,4 +144,8 @@
             > .el-card
                 margin 0.5em
                 flex-basis 50%
+            .preview
+                background #f6f6f6
+                .el-card__header
+                    background #fff
 </style>

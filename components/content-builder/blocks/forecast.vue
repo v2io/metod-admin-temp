@@ -36,21 +36,17 @@
             <div slot="header" class="clearfix">
                 <span>{{ $t('preview') }}</span>
             </div>
-            <ul>
-                <li v-for="item in state.items" :key="item.title">
-                    <h3>{{item.title}} ({{item.probability}}%)</h3>
-                    <p>{{item.text}}</p>
-                </li>
-            </ul>
+            <preview :content="state"></preview>
         </el-card>
     </div>
 </template>
 
 <script>
+  import preview from "~/shared-components/article/blocks/forecast"
   export default {
-    props: ['block'],
+    props: ['content'],
     data() {
-      return {state: this.block}
+      return {state: this.content}
     },
     methods: {
       add() {
@@ -67,6 +63,9 @@
         },
         deep: true
       }
+    },
+    components: {
+      preview
     }
   }
 </script>

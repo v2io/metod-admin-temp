@@ -16,7 +16,8 @@
     "dev:web": "cross-env NODE_ENV=DEV BUILD_TARGET=web  nuxt",
     "build": "nuxt build && electron-builder",
     "build:web": "cross-env nuxt build",
-    "start": "cross-env nuxt build && nuxt start"
+    "start": "cross-env nuxt build && nuxt start",
+    "update": "git submodule update --recursive --remote"
   },
   "dependencies": {
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
@@ -25,11 +26,15 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-flow": "^7.0.0",
     "apexcharts": "^2.0.9",
+    "axios": "^0.18.0",
     "element-ui": "^2.4.7",
     "lockr": "^0.8.5",
+    "nib": "^1.1.2",
     "nuxt": "^2.1.0",
     "nuxt-babel": "^0.1.2",
     "nuxt-i18n": "^5.3.0",
+    "rupture": "^0.7.1",
+    "s-grid": "^1.2.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "underscore": "^1.9.1",
