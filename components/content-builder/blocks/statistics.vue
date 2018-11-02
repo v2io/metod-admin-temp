@@ -2,7 +2,7 @@
     <div class="block-body">
         <el-card class="box-card editor">
             <div slot="header" class="clearfix">
-                <el-input v-model="state.heading" :placeholder="$t('block_heading')"></el-input>
+                <!--<el-input v-model="state.heading" :placeholder="$t('block_heading')"></el-input>-->
             </div>
 
             <strong>Все сообщения в структуре инфополя</strong>
@@ -20,11 +20,11 @@
                 <li>Телевидение:
                     <el-input type="number" v-model="state.messages.tv"></el-input>
                 </li>
-                <li>Радио:
-                    <el-input type="number" v-model="state.messages.radio"></el-input>
-                </li>
                 <li>Пресса:
                     <el-input type="number" v-model="state.messages.press"></el-input>
+                </li>
+                <li>Радио:
+                    <el-input type="number" v-model="state.messages.radio"></el-input>
                 </li>
                 <li>Интернет:
                     <el-input type="number" v-model="state.messages.internet"></el-input>

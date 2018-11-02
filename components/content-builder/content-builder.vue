@@ -4,16 +4,27 @@
             <el-col :span="12">
                 <el-card style="margin-bottom: 1em">
                     <div slot="header">{{$t('template')}}</div>
-                    <el-button class="button" @click="createFromTemplate('simple')">{{ $t(`template-simple`) }}</el-button>
+                    <el-button class="button" @click="createFromTemplate('weekly')">{{ $t(`template-weekly`) }}</el-button>
                 </el-card>
             </el-col>
             <el-col :span="12">
                 <el-card style="margin-bottom: 1em">
                     <div slot="header">{{$t('basic-article-fields')}}</div>
-                    <label>{{$t('title')}}</label>
+                    <label>{{$t('article-title')}}</label>
                     <el-input v-model="properties.title"></el-input>
-                    <label>{{$t('announce')}}</label>
+                    <br><br>
+                    <label>{{$t('article-announce')}}</label>
                     <el-input type="textarea" rows="3" v-model="properties.announce"></el-input>
+                    <br><br>
+                    <label>{{$t('category')}}</label>
+                    <el-select v-model="properties.category" :placeholder="$t('category')">
+                        <el-option label="Безопасность" value="security"></el-option>
+                        <el-option label="Внутренняя политика" value="intternal_politics"></el-option>
+                        <el-option label="Международная политика" value="international_politics"></el-option>
+                        <el-option label="Социальная сфера" value="social_sphere"></el-option>
+                        <el-option label="Сфера безопасности" value="security_sphere"></el-option>
+                        <el-option label="Экономика" value="economy"></el-option>
+                    </el-select>
                 </el-card>
             </el-col>
         </el-row>
@@ -96,9 +107,10 @@
         }
       },
       createFromTemplate(template) {
+        if (!confirm(this.$t('template-confirm'))) return;
         switch (template) {
-          case 'simple':
-            this.items = require('./templates/simple').default
+          case 'weekly':
+            this.items = require('./templates/weekly').default
         }
       },
       onBlockChange(_id, data) {

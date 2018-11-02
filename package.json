@@ -43,6 +43,7 @@
     "stylus-loader": "^3.0.2",
     "underscore": "^1.9.1",
     "vue-apexcharts": "^1.2.1",
+    "vue-filter": "^0.2.5",
     "vue-lodash": "^2.0.0",
     "vue-nl2br": "^0.0.5",
     "vue-wysiwyg": "^1.7.2",

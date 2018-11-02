@@ -32,6 +32,7 @@ module.exports = {
 			'~plugins/api',
 			'~plugins/vue-awesome',
 			'~plugins/components',
+    	'~plugins/filters.js',
 			{src: '~plugins/vueEditor', ssr: false},
 			{src: '~plugins/draggable', ssr: false},
 			{src: '~plugins/apexcharts', ssr: false}
